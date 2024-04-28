@@ -11,8 +11,6 @@ WORKDIR /app
 
 # Set production environment
 ENV NODE_ENV="production"
-ENV CAISY_PROJECT_ID=process.env.CAISY_PROJECT_ID;
-ENV CAISY_API_KEY=process.env.CAISY_API_KEY;
 
 
 # Throw-away build stage to reduce size of final image
