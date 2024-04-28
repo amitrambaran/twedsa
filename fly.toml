@@ -6,8 +6,9 @@
 app = 'twedsa-patient-dew-4157'
 primary_region = 'ewr'
 
-[env]
-  CAISY_PROJECT_ID = "4aebde9c-c273-4dba-b0c0-25e8f00edc43"
+[build.args]
+  CAISY_PROJECT_ID='4aebde9c-c273-4dba-b0c0-25e8f00edc43'
+  CAISY_API_KEY='EbSmis06WxrBT2K6aaa8M2x31NQuGb5e'
 
 [http_service]
   internal_port = 3000
