@@ -9,6 +9,10 @@ const nextConfig = {
       {
         // Matching all API routes
         source: "/api/:path*",
+        env: {
+          CAISY_PROJECT_ID: process.env.CAISY_PROJECT_ID,
+          CAISY_API_KEY: process.env.CAISY_API_KEY,
+        },
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
