@@ -9,12 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     concurrency: deploy-group # optional: ensure only one action runs at a time
     env:
-          CAISY_API_KEY: ${{ secrets.CAISY_API_KEY }}
+      CAISY_API_KEY: ${{ secrets.CAISY_API_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only \
-            --build-secret CAISY_API_KEY=${{ secrets.CAISY_API_KEY }}
-      fly deploy 
+          --build-secret CAISY_API_KEY=${{ secrets.CAISY_API_KEY }}
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
