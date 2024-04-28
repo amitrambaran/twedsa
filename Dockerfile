@@ -12,11 +12,8 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 ENV CAISY_PROJECT_ID="4aebde9c-c273-4dba-b0c0-25e8f00edc43"
+ENV CAISY_API_KEY="Y5rr06qkiOfyR0TvyG4UMxjQaGxSHFkh"
 
-# Mount the CAISY_API_KEY secret
-RUN --mount=type=secret,id=CAISY_API_KEY \
-    CAISY_API_KEY="$(cat /run/secrets/CAISY_API_KEY)" \
-    echo "CAISY_API_KEY: $CAISY_API_KEY"
 
 # Throw-away build stage to reduce size of final image
 FROM base as build
