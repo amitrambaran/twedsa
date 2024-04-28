@@ -13,9 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --build-secret CAISY_API_KEY=${{ secrets.CAISY_API_KEY }} --remote-only 
+      - run: flyctl deploy --build-secret CAISY_API_KEY=${{ secrets.CAISY_API_KEY }} --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
-
-fly deploy --build-secret SPOTIFY_CLIENT_ID=someClientId --build-secret SPOTIFY_CLIENT_SECRET=someClientSecret
