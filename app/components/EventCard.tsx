@@ -33,7 +33,7 @@ const EventCard = ({ description, image, index }: EventCardData) => {
       <div className={`w-1/2 flex justify-center`}>
         <Image src={image.src} alt={"some image"} width={800} height={400} />
       </div>
-      <div className="text-2xl w-1/2 flex items-center justify-center p-4">
+      <div className="text-xl w-1/2 flex items-center justify-center p-4">
         {cardDescriptionText}
       </div>
     </div>

@@ -14,7 +14,7 @@ const Header = () => {
         <Link href="/">Tricia Weds Amit</Link>
       </h1>
       <div className={`navbar justify-center ${playfairDisplay.className}`}>
-        <ul className="primary-content menu menu-horizontal px-1 text-md">
+        <ul className="primary-content menu menu-horizontal px-1 text-md font-semibold">
           <li>
             <Link href="/our-story">Our story</Link>
           </li>
