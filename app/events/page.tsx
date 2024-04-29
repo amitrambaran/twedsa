@@ -15,6 +15,7 @@ interface Card {
   image: {
     src: string;
   };
+  position: number;
 }
 
 export default async function Events() {
@@ -39,20 +40,24 @@ export default async function Events() {
               json
             }
             id
+            position
           }
         }
       }
     }
   `;
   const { allEventCard }: EventCardResponse = await client.request(query);
+  const sortedEdges = allEventCard.edges.sort(
+    (a, b) => a.node.position - b.node.position
+  );
 
   return (
     <section className="m-8">
-      {allEventCard.edges.map((edge, index) => (
+      {sortedEdges.map((edge) => (
         <EventCard
           description={edge.node.description}
           image={edge.node.image}
-          index={index}
+          index={edge.node.position}
           key={edge.node.id}
         />
       ))}
