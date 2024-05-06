@@ -29,11 +29,21 @@ const EventCard = ({ description, image, index }: EventCardData) => {
   const cardDescriptionText = description.json.content[0]?.content?.[0]?.text;
   const isEvenCard = index % 2 === 0;
   return (
-    <div className={`flex ${isEvenCard ? "flex-row-reverse" : "flex-row"}`}>
-      <div className={`w-1/2 flex justify-center`}>
-        <Image src={image.src} alt={"some image"} width={800} height={400} />
+    <div
+      className={`flex items-center ${
+        isEvenCard ? "flex-col sm:flex-row-reverse" : "flex-col sm:flex-row"
+      }`}
+    >
+      <div className={`sm:w-1/2 flex justify-center`}>
+        <Image
+          className="object-cover"
+          src={image.src}
+          alt={"some image"}
+          width={800}
+          height={400}
+        />
       </div>
-      <div className="text-xl w-1/2 flex items-center justify-center p-4">
+      <div className="text-sm text-center md:text-lg w-1/2 flex items-center justify-center p-2">
         {cardDescriptionText}
       </div>
     </div>

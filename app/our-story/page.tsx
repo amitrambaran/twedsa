@@ -1,6 +1,6 @@
 export default function OurStory() {
   return (
-    <section className="flex justify-center m-8">
+    <section className="flex justify-center m-8 lg:mx-40">
       <p>
         &quot;That day, the human race remembered the terror of being dominated
         by them, and the shame of being held captive in a birdcage...&quot; —
