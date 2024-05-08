@@ -34,11 +34,12 @@ const EventCard = ({ description, image, index }: EventCardData) => {
         isEvenCard ? "flex-col sm:flex-row-reverse" : "flex-col sm:flex-row"
       }`}
     >
-      <div className={`sm:w-1/2 h-[400px] flex justify-center`}>
+      <div className={`sm:flex-1 h-[400px] flex justify-center`}>
         <Image
           className="object-cover"
           src={image.src}
           alt={"some image"}
+          style={{ width: "100%" }}
           width={800}
           height={400}
         />
