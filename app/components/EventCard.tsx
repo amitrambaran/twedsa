@@ -30,7 +30,7 @@ const EventCard = ({ description, image, index }: EventCardData) => {
   const isEvenCard = index % 2 === 0;
   return (
     <div
-      className={`flex items-center ${
+      className={`flex items-center animate-fadeFromBottom ${
         isEvenCard ? "flex-col sm:flex-row-reverse" : "flex-col sm:flex-row"
       }`}
     >
