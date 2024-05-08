@@ -52,7 +52,7 @@ export default async function Events() {
   );
 
   return (
-    <section className="m-8">
+    <section className="m-2">
       {sortedEdges.map((edge) => (
         <EventCard
           description={edge.node.description}
