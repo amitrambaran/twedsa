@@ -4,8 +4,7 @@ export default async function RSVP() {
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLScavisZqiNCqaVzDzrdqKGaxeMgODy4GczrMrENvsSZapo6Hw/viewform?embedded=true"
         width="100%"
-        height="1150"
-        scrolling="no"
+        height="1700"
       ></iframe>
     </section>
   );
