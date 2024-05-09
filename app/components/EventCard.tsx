@@ -30,21 +30,21 @@ const EventCard = ({ description, image, index }: EventCardData) => {
   const isEvenCard = index % 2 === 0;
   return (
     <div
-      className={`flex items-center animate-fadeFromBottom ${
+      className={`flex items-center w-full animate-fadeFromBottom ${
         isEvenCard ? "flex-col sm:flex-row-reverse" : "flex-col sm:flex-row"
       }`}
     >
-      <div className={`sm:flex-1 h-[400px] flex justify-center`}>
+      <div className={`w-full sm:w-1/2 h-[400px] flex justify-center`}>
         <Image
           className="object-cover"
           src={image.src}
-          alt={"some image"}
+          alt={cardDescriptionText || ""}
           style={{ width: "100%" }}
           width={800}
           height={400}
         />
       </div>
-      <div className="text-sm text-center md:text-lg w-1/2 flex items-center justify-center p-2">
+      <div className="text-sm text-center sm:text-lg w-full sm:w-1/2 flex items-center justify-center p-2">
         {cardDescriptionText}
       </div>
     </div>
