@@ -1,32 +1,18 @@
 import Image from "next/image";
 import React from "react";
 
-interface EventCardData {
-  description: Description;
-  image: {
-    src: string;
-  };
+// Define the props types
+interface EventCardProps {
+  description: string;
+  imageHref: string;
   index: number;
-  key: string;
 }
 
-interface Content {
-  type: string;
-  attrs?: {
-    textAlign: string;
-  };
-  content?: {
-    text: string;
-    type: string;
-  }[];
-}
-
-interface Description {
-  json: { content: Content[]; type: string };
-}
-
-const EventCard = ({ description, image, index }: EventCardData) => {
-  const cardDescriptionText = description.json.content[0]?.content?.[0]?.text;
+const EventCard: React.FC<EventCardProps> = ({
+  description,
+  imageHref,
+  index,
+}) => {
   const isEvenCard = index % 2 === 0;
   return (
     <div
@@ -37,15 +23,15 @@ const EventCard = ({ description, image, index }: EventCardData) => {
       <div className={`w-full sm:w-1/2 h-[400px] flex justify-center`}>
         <Image
           className="object-cover"
-          src={image.src}
-          alt={cardDescriptionText || ""}
+          src={imageHref}
+          alt={description || ""}
           style={{ width: "100%", maxWidth: "initial" }}
           width={800}
           height={400}
         />
       </div>
       <div className="text-sm text-center sm:text-lg w-full sm:w-1/2 flex items-center justify-center p-2">
-        {cardDescriptionText}
+        {description}
       </div>
     </div>
   );

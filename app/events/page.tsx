@@ -1,64 +1,21 @@
 import EventCard from "../components/EventCard";
-import { GraphQLClient, gql } from "graphql-request";
+import events from "./events.json";
 
-interface EventCardResponse {
-  allEventCard: {
-    edges: {
-      node: Card;
-    }[];
-  };
-}
-
-interface Card {
-  description: any;
-  id: string;
-  image: {
-    src: string;
-  };
+interface Event {
+  description: string;
+  imageHref: string;
   position: number;
 }
 
-export default async function Events() {
-  const client = new GraphQLClient(
-    `https://cloud.caisy.io/api/e/v4/${process.env.CAISY_PROJECT_ID}/graphql`,
-    {
-      headers: {
-        "x-caisy-apikey": process.env.CAISY_API_KEY || "",
-      },
-    }
-  );
-
-  const query = gql`
-    query eventCardQuery {
-      allEventCard {
-        edges {
-          node {
-            image {
-              src
-            }
-            description {
-              json
-            }
-            id
-            position
-          }
-        }
-      }
-    }
-  `;
-  const { allEventCard }: EventCardResponse = await client.request(query);
-  const sortedEdges = allEventCard.edges.sort(
-    (a, b) => a.node.position - b.node.position
-  );
-
+export default function Events() {
   return (
     <section className="m-2">
-      {sortedEdges.map((edge) => (
+      {events.map((event: Event, index: number) => (
         <EventCard
-          description={edge.node.description}
-          image={edge.node.image}
-          index={edge.node.position}
-          key={edge.node.id}
+          description={event.description}
+          imageHref={event.imageHref}
+          index={event.position}
+          key={index}
         />
       ))}
     </section>

@@ -1,0 +1,32 @@
+[
+  {
+    "position": 0,
+    "imageHref": "https://www.myjewishlearning.com/wp-content/uploads/2004/11/resized-rings.jpg",
+    "description": "Engagement Ceremony"
+  },
+  {
+    "position": 1,
+    "imageHref": "https://daveandomana.wedding/images/mehndi-banner.jpg",
+    "description": "Mendhi Night"
+  },
+  {
+    "position": 2,
+    "imageHref": "https://www.atlaseventrental.com/wp-content/uploads/2023/09/sample-collection1.jpg",
+    "description": "Bridal Shower"
+  },
+  {
+    "position": 3,
+    "imageHref": "https://images.unsplash.com/photo-1680491026542-a99730a0e235?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "description": "Maticoor"
+  },
+  {
+    "position": 4,
+    "imageHref": "https://www.tourmyindia.com/blog//wp-content/uploads/2019/08/Seven-Vows-and-Sacred-Fire.jpg",
+    "description": "Wedding"
+  },
+  {
+    "position": 5,
+    "imageHref": "https://static.giggster.com/media/activities/wedding-reception/uploads/1707997449/1080.jpg",
+    "description": "Reception"
+  }
+]
