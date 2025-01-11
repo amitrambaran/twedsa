@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Timeline from "@/components/ui/Timeline";
-import EventCard from "@/components/ui/EventCard";
 import {
   Dialog,
   DialogContent,
