@@ -30,7 +30,7 @@ export default function Home() {
 
     const countdown = setInterval(() => {
       const now = new Date();
-      const difference = targetDate - now;
+      const difference = targetDate.getTime() - now.getTime();
 
       if (difference <= 0) {
         clearInterval(countdown);
@@ -235,14 +235,15 @@ export default function Home() {
             without a doubt that our love was meant to last a lifetime.
             <br />
             <br />
-            As we prepare to say "I do" and exchange vows surrounded by our
-            nearest and dearest, we are filled with gratitude for each and every
-            one of you who has been a part of our journey. Your love, support,
-            and presence mean the world to us, and we can't wait to celebrate
-            this joyous occasion with all of you. So, explore our website, learn
-            more about our love story, and get ready to join us as we embark on
-            the next chapter of our lives together. We can't wait to create
-            unforgettable memories with you all on our wedding day!
+            As we prepare to say &quot;I do&quot; and exchange vows surrounded
+            by our nearest and dearest, we are filled with gratitude for each
+            and every one of you who has been a part of our journey. Your love,
+            support, and presence mean the world to us, and we can&apos;t wait
+            to celebrate this joyous occasion with all of you. So, explore our
+            website, learn more about our love story, and get ready to join us
+            as we embark on the next chapter of our lives together. We
+            can&apos;t wait to create unforgettable memories with you all on our
+            wedding day!
             <br />
             <br />
             With love and excitement,
