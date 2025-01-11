@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes glow {
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.7)); }
+    50% { filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)); }
+}
+  
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.greatvibes-font {
+    font-family: var(--font-greatVibes) !important;
+}
+
+.noto-font {
+  font-family: var(--font-noto) !important;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+/* For Firefox */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+/* Flip animation */
