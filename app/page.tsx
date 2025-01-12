@@ -110,43 +110,40 @@ export default function Home() {
 
       {/* Content Section */}
       <section className="bg-[#B31E56] relative flex flex-col items-center py-6 justify-start h-full z-10 text-[#FED6BD]">
-        <p className="block text-4xl text-center px-4 greatvibes-font">
-          You are cordially invited to the wedding celebration of
+        <Image src="/ganesha.png" alt="logo" width={70} height={70} />
+
+        <p className="block text-2xl text-center font-bold p-4 font-cormorant">
+          You are cordially invited to the wedding ceremony of
         </p>
-        <p className="block my-6 text-6xl animate-fadein greatvibes-font">
+        <p className="block text-8xl animate-fadein font-luxuriousScript">
           Tricia & Amit
         </p>
-        {/* Left-aligned date and location */}
-        <div className="pb-6 flex justify-between text-4xl items-end noto-font">
-          <p className="py-1 border-t-2 border-b-2 border-[#FED6BD]">AUG</p>
-          <p className="px-4 text-6xl"> 22 & 23 </p>
-          <p className="py-1 border-t-2 border-b-2 border-[#FED6BD]">2025</p>
-        </div>
-        <div className="flex flex-col items-center text-xl font-serif">
-          <p> 📍 </p>
-          <p>Triveni Mandir</p>
-          <p className="">Pearson Convention Centre</p>
+        <div className="flex flex-col items-center text-xl font-cormorant">
+          <p className="text-4xl mb-2">08.22.2025</p>
+          <p className="font-bold mb-4">📍 Triveni Mandir</p>
+          <p className="text-4xl mb-2">08.23.2025</p>
+          <p className="font-bold">📍 Pearson Convention Centre</p>
         </div>
 
         {/* Countdown Timer */}
-        <div className="flex noto-font">
+        <div className="flex font-cormorant">
           <p className="flex flex-col items-center px-4 pt-4 text-4xl">
             <span className="text-6xl">{timeLeft.days}</span>
-            <span className="text-sm">Days</span>
+            <span className="text-sm mt-2">Days</span>
           </p>
           <p className="flex flex-col items-center px-4 pt-4 text-4xl">
             <span className="text-6xl">{timeLeft.hours}</span>
-            <span className="text-sm">Hours</span>
+            <span className="text-sm mt-2">Hours</span>
           </p>
           <p className="flex flex-col items-center px-4 pt-4 text-4xl">
             <span className="text-6xl">{timeLeft.minutes}</span>
-            <span className="text-sm">Minutes</span>
+            <span className="text-sm mt-2">Minutes</span>
           </p>
           <p className="flex flex-col items-center px-4 pt-4 text-4xl">
             <span key={timeLeft.seconds} className="text-6xl">
               {timeLeft.seconds}
             </span>
-            <span className="text-sm">Seconds</span>
+            <span className="text-sm mt-2">Seconds</span>
           </p>
         </div>
 
@@ -155,7 +152,7 @@ export default function Home() {
             <Button
               className="my-10 px-6 py-6 text-lg bg-[#F8E6D1] text-amber-950 rounded-lg font-semibold
           hover:bg-[#e4d1b8] hover:text-amber-900 hover:shadow-lg hover:scale-110
-          focus:outline-none transition-transform duration-200 ease-in-out"
+          focus:outline-none transition-transform duration-200 ease-in-out animate-pulse animate-glow"
             >
               RSVP Here
             </Button>
