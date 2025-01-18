@@ -40,9 +40,9 @@ export default function Timeline() {
   ];
 
   return (
-    <div className="relative w-full flex justify-center bg-[#B31E56]">
+    <div className="relative w-full flex justify-center">
       {/* Center Line */}
-      <div className="absolute h-full w-1 bg-[#F8E6D1]/80 left-1/2 transform -translate-x-1/2"></div>
+      <div className="absolute h-full w-1 bg-[#f0d7bb]/80 left-1/2 transform -translate-x-1/2"></div>
 
       {/* Event Cards */}
       <div className="w-full max-w-3xl p-2 relative">
@@ -56,7 +56,7 @@ export default function Timeline() {
             } mb-4 relative`} // Reduced margin-bottom from 8 to 4
           >
             {/* Dot */}
-            <div className="absolute w-3 h-3 bg-[#F8E6D1] rounded-full left-1/2 transform -translate-x-1/2"></div>{" "}
+            <div className="absolute w-3 h-3 bg-[#dab47b] rounded-full left-1/2 transform -translate-x-1/2"></div>{" "}
             {/* Reduced size */}
             {/* Event Card */}
             <div

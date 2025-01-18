@@ -50,12 +50,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${luxuriousScript.variable} ${cormorant.variable} ${noto.variable} bg-[#B31E56]`}
+      className={`${inter.variable} ${luxuriousScript.variable} ${cormorant.variable} ${noto.variable} bg-[#0e421f]`}
     >
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body className={`bg-base-100 rounded-lg`}>{children}</body>
+      <body className={`rounded-lg bg-[#0f3124] border`}>{children}</body>
     </html>
   );
 }

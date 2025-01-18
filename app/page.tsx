@@ -59,17 +59,19 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative bg-[#B31E56]">
+    <main className="relative">
+      <div className="stars"></div>
+      <div className="twinkling"></div>
       {/* Scroll Progress Bar */}
       <div
-        className="fixed top-0 left-0 h-1 bg-[#FED6BD] z-50"
+        className="fixed top-0 left-0 h-1 bg-[#D8B480] z-50"
         style={{ width: `${scrollProgress}%` }}
       ></div>
 
       {/* Background Color */}
-      <div className="absolute inset-0 bg-[#B31E56]"></div>
+      <div className="absolute inset-0"></div>
 
-      <section className="flex items-start justify-between bg-[#B31E56]">
+      <section className="flex items-start justify-between">
         {/* Image in the top left corner */}
         <div className="p-4 z-10">
           <div className="animate-pulse animate-glow">
@@ -109,48 +111,61 @@ export default function Home() {
       </section>
 
       {/* Content Section */}
-      <section className="bg-[#B31E56] relative flex flex-col items-center py-6 justify-start h-full z-10 text-[#FED6BD]">
+      <section className="relative flex flex-col items-center py-6 justify-start h-full z-10 text-[#D8B480]">
         <Image src="/ganesha.png" alt="logo" width={70} height={70} />
 
         <p className="block text-2xl text-center font-bold p-4 font-cormorant">
           You are cordially invited to the wedding ceremony of
         </p>
-        <p className="block text-8xl animate-fadein font-luxuriousScript">
+        <p className="block text-7xl md:text-8xl animate-fadein font-luxuriousScript">
           Tricia & Amit
         </p>
         <div className="flex flex-col items-center text-xl font-cormorant">
-          <p className="text-4xl mb-2">08.22.2025</p>
+          <p className="text-4xl">08.22.2025</p>
           <p className="font-bold mb-4">📍 Triveni Mandir</p>
-          <p className="text-4xl mb-2">08.23.2025</p>
+          <p className="text-4xl">08.23.2025</p>
           <p className="font-bold">📍 Pearson Convention Centre</p>
         </div>
 
         {/* Countdown Timer */}
         <div className="flex font-cormorant">
-          <p className="flex flex-col items-center px-4 pt-4 text-4xl">
-            <span className="text-6xl">{timeLeft.days}</span>
+          <p className="flex flex-col items-center px-4 pt-4">
+            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center">
+              {timeLeft.days}
+            </span>
             <span className="text-sm mt-2">Days</span>
           </p>
           <p className="flex flex-col items-center px-4 pt-4 text-4xl">
-            <span className="text-6xl">{timeLeft.hours}</span>
+            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center">
+              {timeLeft.hours}
+            </span>
             <span className="text-sm mt-2">Hours</span>
           </p>
           <p className="flex flex-col items-center px-4 pt-4 text-4xl">
-            <span className="text-6xl">{timeLeft.minutes}</span>
+            <span className="text-4xl md:text-6xl w-10 md:w-16text-center">
+              {timeLeft.minutes}
+            </span>
             <span className="text-sm mt-2">Minutes</span>
           </p>
           <p className="flex flex-col items-center px-4 pt-4 text-4xl">
-            <span key={timeLeft.seconds} className="text-6xl">
+            <span
+              key={timeLeft.seconds}
+              className="text-4xl md:text-6xl w-10 md:w-16 text-center"
+            >
               {timeLeft.seconds}
             </span>
             <span className="text-sm mt-2">Seconds</span>
           </p>
         </div>
 
+        <p className="font-cormorant font-bold text-xl mt-4">
+          #OnCloudRambaran2025
+        </p>
+
         <Dialog>
           <DialogTrigger asChild>
             <Button
-              className="my-10 px-6 py-6 text-lg bg-[#F8E6D1] text-amber-950 rounded-lg font-semibold
+              className="my-10 px-6 py-6 text-lg bg-[#D8B480] text-slate-900 rounded-lg font-semibold
           hover:bg-[#e4d1b8] hover:text-amber-900 hover:shadow-lg hover:scale-110
           focus:outline-none transition-transform duration-200 ease-in-out animate-pulse animate-glow"
             >
@@ -205,7 +220,7 @@ export default function Home() {
         <section className="text-center max-w-4xl">
           <h2 className="text-xl font-bold mb-4">Our Story</h2>
 
-          <p className="text-md mb-4">
+          <p className="text-md m-8">
             Dearest Family and Friends,
             <br />
             <br />
@@ -222,13 +237,13 @@ export default function Home() {
             laughter brought us closer together, every moment has been a
             cherished chapter in our love story. On September 12, 2020, a
             milestone etched itself into our hearts as Amit asked Tricia to be
-            their girlfriend, marking the beginning of a beautiful journey
-            filled with love, laughter, and countless memories. But fate had
-            even grander plans for us. Exactly three years later, on the
-            anniversary of that unforgettable day, Amit knelt before Tricia,
-            ring in hand, and asked for forever. In that moment, surrounded by
-            the echoes of our past and the promise of our future, we knew
-            without a doubt that our love was meant to last a lifetime.
+            his girlfriend, marking the beginning of a beautiful journey filled
+            with love, laughter, and countless memories. But fate had even
+            grander plans for us. Exactly three years later, on the anniversary
+            of that unforgettable day, Amit knelt before Tricia, ring in hand,
+            and asked for forever. In that moment, surrounded by the echoes of
+            our past and the promise of our future, we knew without a doubt that
+            our love was meant to last a lifetime.
             <br />
             <br />
             As we prepare to say &quot;I do&quot; and exchange vows surrounded
