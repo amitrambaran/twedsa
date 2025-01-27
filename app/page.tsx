@@ -4,15 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Timeline from "@/components/ui/Timeline";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export default function Home() {
   const [timeLeft, setTimeLeft] = useState({
@@ -261,7 +253,7 @@ export default function Home() {
             <br />
             Tricia & Amit
           </p>
-          <p className="text-md mb-4 italic">
+          <p className="text-sm m-8 italic">
             Your presence at our wedding is the greatest gift of all. However,
             if you wish to honour us with a gift, a monetary gift would be very
             welcome.

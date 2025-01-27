@@ -46,26 +46,20 @@ export default function Timeline() {
 
       {/* Event Cards */}
       <div className="w-full max-w-3xl p-2 relative">
-        {" "}
-        {/* Reduced padding */}
         {events.map((event, index) => (
           <div
             key={index}
             className={`flex items-center ${
               index % 2 === 0 ? "justify-start" : "justify-end"
-            } mb-4 relative`} // Reduced margin-bottom from 8 to 4
+            } mb-4 relative`}
           >
             {/* Dot */}
-            <div className="absolute w-3 h-3 bg-[#dab47b] rounded-full left-1/2 transform -translate-x-1/2"></div>{" "}
-            {/* Reduced size */}
-            {/* Event Card */}
+            <div className="absolute w-3 h-3 bg-[#dab47b] rounded-full left-1/2 transform -translate-x-1/2"></div>
             <div
-              className={`relative  w-4/12 ${
+              className={`relative  w-2/5 md:w-4/12 ${
                 index % 2 === 0 ? "pr-1" : "pl-1"
               }`}
             >
-              {" "}
-              {/* Further reduced width and padding */}
               <EventCard event={event} />
             </div>
           </div>
