@@ -157,7 +157,7 @@ export default function Home() {
         <Dialog>
           <DialogTrigger asChild>
             <Button
-              className="my-10 px-6 py-6 text-lg bg-[#D8B480] text-slate-900 rounded-lg font-semibold
+              className="my-10 px-6 py-6 font-cormorant font-bold text-lg bg-[#D8B480] text-slate-900 rounded-lg
           hover:bg-[#e4d1b8] hover:text-amber-900 hover:shadow-lg hover:scale-110
           focus:outline-none transition-transform duration-200 ease-in-out animate-pulse animate-glow"
             >
@@ -166,7 +166,7 @@ export default function Home() {
           </DialogTrigger>
           <DialogContent className="sm:max-w-[700px] h-[90vh]">
             <div
-              className="w-11/12 h-full max-h-full overflow-auto"
+              className="w-full h-full max-h-full overflow-auto mt-8"
               style={{
                 scrollbarWidth: "none",
                 msOverflowStyle: "none",
@@ -175,7 +175,7 @@ export default function Home() {
               <iframe
                 id="google-form"
                 src="https://docs.google.com/forms/d/e/1FAIpQLSfMqUsa0LrbCdvAivu5NZT6zn0nZM1wcLF4lyOvm1oJZTmQxw/viewform?embedded=true"
-                className="w-full h-full pl-8"
+                className="w-full h-full pb-8"
                 style={{
                   border: "none",
                   scrollbarWidth: "none",
@@ -190,11 +190,11 @@ export default function Home() {
         <Timeline />
 
         {/* Preferred Accommodations Section */}
-        <section className="m-16 text-center">
-          <h2 className="text-xl font-bold mb-4">
+        <section className="font-cormorant text-xl m-8 mt-24 text-center">
+          <h2 className="text-xl font-extrabold mb-4">
             Preferred Rate Accommodations
           </h2>
-          <p className="text-md mb-4">
+          <p className="text-base font-semibold mb-4">
             We have arranged discounted rates at the Hampton Inn Hotel for your
             convenience!
           </p>
@@ -202,14 +202,14 @@ export default function Home() {
             href="https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=YTOBMHX&groupCode=CHHMRW&arrivaldate=2025-08-21&departuredate=2025-08-24&cid=OM%2CWW%2CHILTONLINK%2CEN%2CDirectLink&fromId=HILTONLINKDIRECT"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-md text-cyan-200 underline hover:text-[#e4d1b8]"
+            className="text-base text-cyan-200 underline hover:text-[#e4d1b8]"
           >
             Click here to book your stay
           </a>
         </section>
 
         {/* Our Story Section */}
-        <section className="text-center max-w-4xl">
+        <section className="mt-16 font-cormorant font-semibold text-center max-w-4xl">
           <h2 className="text-xl font-bold mb-4">Our Story</h2>
 
           <p className="text-md m-8">

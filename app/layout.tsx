@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import {
   Luxurious_Script,
-  Cormorant_Garamond,
   Inter,
   Noto_Serif_JP,
+  Cormorant,
 } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -21,10 +21,9 @@ const luxuriousScript = Luxurious_Script({
   variable: "--font-luxuriousScript",
 });
 
-const cormorant = Cormorant_Garamond({
+const cormorant = Cormorant({
   subsets: ["latin"],
-  display: "swap",
-  weight: "400",
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant",
 });
 
