@@ -6,24 +6,29 @@ export default function Timeline() {
       title: "Pitri Puja",
       date: "August 16th",
       location: "Bride/Groom's home",
-      description: "As we honor those who came before,\nTheir love and wisdom guide us evermore.\nThrough prayer and remembrance, their presence stays,\nBlessing our journey in countless ways."
+      description:
+        "As we honor those who came before,\nTheir love and wisdom guide us evermore.\nThrough prayer and remembrance, their presence stays,\nBlessing our journey in countless ways.",
     },
     {
       title: "Sangeet",
       date: "August 19th",
       location: "Bride's home",
-      description: "Music weaves memories, as hearts unite,\nA celebration of love, pure and bright.\nWith every step, joy fills the air,\nA moment to cherish, beyond compare."
+      description:
+        "Music weaves memories, as hearts unite,\nA celebration of love, pure and bright.\nWith every step, joy fills the air,\nA moment to cherish, beyond compare.",
     },
     {
       title: "Mehndi Night",
       date: "August 20th",
       location: "Bride's home",
-      description: "Marriage adds celebrations to life.\nMusic adds life to celebrations.\nMendhi adorns the hands as life takes on a new color."
+      description:
+        "Marriage adds celebrations to life.\nMusic adds life to celebrations.\nMendhi adorns the hands as life takes on a new color.",
     },
     {
       title: "Maticoor Night",
       date: "August 21st",
       location: "Bride/Groom's home",
+      description:
+        "With sacred earth, we honor the past,\nTurmeric's touch, a bond to last.\nLaughter and love in every embrace,\nA new journey blessed with grace.",
     },
     {
       title: "The Wedding",

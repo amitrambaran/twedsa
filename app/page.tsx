@@ -5,13 +5,29 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Timeline from "@/components/ui/Timeline";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { AddToCalendarButton } from "add-to-calendar-button-react";
 
 export default function Home() {
+  // Initial state to prevent layout shift
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    days: Math.floor(
+      (new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) /
+        (1000 * 60 * 60 * 24)
+    ),
+    hours: Math.floor(
+      ((new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) /
+        (1000 * 60 * 60)) %
+        24
+    ),
+    minutes: Math.floor(
+      ((new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) /
+        (1000 * 60)) %
+        60
+    ),
+    seconds:
+      Math.floor(
+        (new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) / 1000
+      ) % 60,
   });
 
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -120,29 +136,29 @@ export default function Home() {
         </div>
 
         {/* Countdown Timer */}
-        <div className="flex font-cormorant">
-          <p className="flex flex-col items-center px-4 pt-4">
-            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center">
+        <div className="flex font-cormorant contain-layout">
+          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
+            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
               {timeLeft.days}
             </span>
             <span className="text-sm mt-2">Days</span>
           </p>
-          <p className="flex flex-col items-center px-4 pt-4 text-4xl">
-            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center">
+          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
+            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
               {timeLeft.hours}
             </span>
             <span className="text-sm mt-2">Hours</span>
           </p>
-          <p className="flex flex-col items-center px-4 pt-4 text-4xl">
-            <span className="text-4xl md:text-6xl w-10 md:w-16text-center">
+          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
+            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
               {timeLeft.minutes}
             </span>
             <span className="text-sm mt-2">Minutes</span>
           </p>
-          <p className="flex flex-col items-center px-4 pt-4 text-4xl">
+          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
             <span
               key={timeLeft.seconds}
-              className="text-4xl md:text-6xl w-10 md:w-16 text-center"
+              className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center"
             >
               {timeLeft.seconds}
             </span>
@@ -157,7 +173,7 @@ export default function Home() {
         <Dialog>
           <DialogTrigger asChild>
             <Button
-              className="my-10 px-6 py-6 font-cormorant font-bold text-lg bg-[#D8B480] text-slate-900 rounded-lg
+              className="mt-10 mb-5 px-6 py-6 font-cormorant font-bold text-lg bg-[#D8B480] text-slate-900 rounded-lg
           hover:bg-[#e4d1b8] hover:text-amber-900 hover:shadow-lg hover:scale-110
           focus:outline-none transition-transform duration-200 ease-in-out animate-pulse animate-glow"
             >
@@ -185,12 +201,30 @@ export default function Home() {
               ></iframe>
             </div>
           </DialogContent>
+
+          <div className="opacity-90">
+            <AddToCalendarButton
+              name="Tricia & Amit's Wedding Ceremony"
+              options={["Apple", "Google", "iCal"]}
+              location="Triveni Mandir/Pearson Convention Centre"
+              startDate="2025-08-22"
+              endDate="2025-08-23"
+              startTime="14:30"
+              endTime="23:59"
+              timeZone="America/Toronto"
+              label="Add to Calendar"
+              styleLight="--font: Cormorant; --btn-background: #2F4F4F; --btn-text: #D8B480; --btn-shadow: #e4d1b8;"
+              buttonStyle="default"
+              trigger="click"
+              size="1"
+            />
+          </div>
         </Dialog>
 
         <Timeline />
 
         {/* Preferred Accommodations Section */}
-        <section className="font-cormorant text-xl m-8 mt-24 text-center">
+        <section className="font-cormorant text-xl mx-8 mt-24 mb-16 text-center">
           <h2 className="text-xl font-extrabold mb-4">
             Preferred Rate Accommodations
           </h2>
@@ -209,7 +243,7 @@ export default function Home() {
         </section>
 
         {/* Our Story Section */}
-        <section className="mt-16 font-cormorant font-semibold text-center max-w-4xl">
+        <section className="font-cormorant font-semibold text-center max-w-4xl">
           <h2 className="text-xl font-bold mb-4">Our Story</h2>
 
           <p className="text-md m-8">
