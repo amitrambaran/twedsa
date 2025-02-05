@@ -213,7 +213,7 @@ export default function Home() {
               endTime="23:59"
               timeZone="America/Toronto"
               label="Add to Calendar"
-              styleLight="--font: Cormorant; --btn-background: #2F4F4F; --btn-text: #D8B480; --btn-shadow: #e4d1b8;"
+              styleLight="--font: Cormorant; --btn-background: #2F4F4F; --btn-text: #D8B480;"
               buttonStyle="default"
               trigger="click"
               size="1"
