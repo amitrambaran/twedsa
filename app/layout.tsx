@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 import {
   Luxurious_Script,
   Inter,
   Noto_Serif_JP,
   Cormorant,
 } from "next/font/google";
-import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "T Weds A ❤️",
@@ -54,7 +53,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body className={`rounded-lg bg-[#0f3124] border`}>{children}</body>
+      <body className={`rounded-lg bg-[#0f3124] border`}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
