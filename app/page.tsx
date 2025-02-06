@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Timeline from "@/components/ui/Timeline";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
+import ImageCarousel from "@/components/ui/ImageCarousel";
 
 export default function Home() {
   // Initial state to prevent layout shift
@@ -67,7 +68,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative">
+    <main className="relative overflow-hidden">
       <div className="stars"></div>
       <div className="twinkling"></div>
       {/* Scroll Progress Bar */}
@@ -79,7 +80,7 @@ export default function Home() {
       {/* Background Color */}
       <div className="absolute inset-0"></div>
 
-      <section className="flex items-start justify-between">
+      <section className="flex items-start justify-between overflow-hidden">
         {/* Image in the top left corner */}
         <div className="p-4 z-10">
           <div className="animate-pulse animate-glow">
@@ -119,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* Content Section */}
-      <section className="relative flex flex-col items-center py-6 justify-start h-full z-10 text-[#D8B480]">
+      <section className="relative flex flex-col items-center py-6 justify-start h-full z-10 text-[#D8B480] overflow-hidden">
         <Image src="/ganesha.png" alt="logo" width={70} height={70} />
 
         <p className="block text-2xl text-center font-bold p-4 font-cormorant">
@@ -242,8 +243,11 @@ export default function Home() {
           </a>
         </section>
 
+        {/* Image Gallery Section */}
+        <ImageCarousel />
+
         {/* Our Story Section */}
-        <section className="font-cormorant font-semibold text-center max-w-4xl">
+        <section className="mt-16 font-cormorant font-semibold text-center max-w-4xl">
           <h2 className="text-xl font-bold mb-4">Our Story</h2>
 
           <p className="text-md m-8">

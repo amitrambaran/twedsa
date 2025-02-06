@@ -34,16 +34,22 @@ export default function Timeline() {
       title: "The Wedding",
       date: "August 22nd",
       location: "Triveni Mandir",
+      description:
+        "Two souls, two hearts, one sacred flame,\nBound by love, in a vow they proclaim.\nWith every mantra, with every rite,\nA journey begins in love’s pure light.",
     },
     {
       title: "The Reception",
       date: "August 23rd",
       location: "Pearson Convention Centre",
+      description:
+        "Beneath twinkling skies and melodies so bright,\nDestiny weaves our future on this joyous night.\nWith laughter and dance, our hearts take flight,\nCelebrating a love that was always meant to ignite.",
     },
     {
       title: "Kangan",
       date: "August 24th",
       location: "Groom's home",
+      description:
+        "Where every bangle chime echoes the timeless bond of love,\nUniting hearts in a festive after-party of love and laughter.\nA night where the wedding’s magic lives on in every shared moment.",
     },
   ];
 
