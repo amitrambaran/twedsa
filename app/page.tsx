@@ -7,8 +7,11 @@ import Timeline from "@/components/ui/Timeline";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { AddToCalendarButton } from "add-to-calendar-button-react";
 import ImageCarousel from "@/components/ui/ImageCarousel";
+import { useSpring, animated } from "@react-spring/web";
 
 export default function Home() {
+  const fadeProps = useSpring({ opacity: 1, from: { opacity: 0 } });
+
   // Initial state to prevent layout shift
   const [timeLeft, setTimeLeft] = useState({
     days: Math.floor(
@@ -68,7 +71,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative overflow-hidden">
+    <animated.main style={fadeProps} className="relative overflow-hidden">
       <div className="stars"></div>
       <div className="twinkling"></div>
       {/* Scroll Progress Bar */}
@@ -298,6 +301,6 @@ export default function Home() {
           </p>
         </section>
       </section>
-    </main>
+    </animated.main>
   );
 }
