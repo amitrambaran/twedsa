@@ -93,6 +93,7 @@ export default function Home() {
               width={100}
               height={200}
               layout="intrinsic"
+              priority={true}
             />
           </div>
         </div>
@@ -105,6 +106,7 @@ export default function Home() {
             width={450}
             height={1000}
             layout="intrinsic"
+            priority={true}
           />
         </div>
 
@@ -117,6 +119,7 @@ export default function Home() {
               width={100}
               height={200}
               layout="intrinsic"
+              priority={true}
             />
           </div>
         </div>
