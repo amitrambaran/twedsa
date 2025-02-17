@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
   Luxurious_Script,
   Inter,
@@ -72,6 +73,7 @@ export default function RootLayout({
       <body className={`rounded-lg bg-[#0f3124] border`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
