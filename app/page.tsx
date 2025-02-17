@@ -11,32 +11,32 @@ import { useSpring, animated } from "@react-spring/web";
 
 export default function Home() {
   const fadeProps = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const [hasMounted, setHasMounted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
-  // Initial state to prevent layout shift
-  const [timeLeft, setTimeLeft] = useState({
-    days: Math.floor(
-      (new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) /
-        (1000 * 60 * 60 * 24)
-    ),
-    hours: Math.floor(
-      ((new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) /
-        (1000 * 60 * 60)) %
-        24
-    ),
-    minutes: Math.floor(
-      ((new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) /
-        (1000 * 60)) %
-        60
-    ),
-    seconds:
-      Math.floor(
-        (new Date("2025-08-22T14:30:00Z").getTime() - Date.now()) / 1000
-      ) % 60,
-  });
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const initialTimeLeft = (() => {
+    const targetDate = new Date("2025-08-22T14:30:00Z");
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / (1000 * 60)) % 60),
+      seconds: Math.floor((difference / 1000) % 60),
+    };
+  })();
+
+  const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
 
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    setHasMounted(true);
+
     const targetDate = new Date("2025-08-22T14:30:00Z");
 
     const countdown = setInterval(() => {
@@ -92,7 +92,6 @@ export default function Home() {
               alt="om"
               width={100}
               height={200}
-              layout="intrinsic"
               priority={true}
             />
           </div>
@@ -105,7 +104,6 @@ export default function Home() {
             alt="chandelier"
             width={450}
             height={1000}
-            layout="intrinsic"
             priority={true}
           />
         </div>
@@ -117,8 +115,7 @@ export default function Home() {
               src="/om.png"
               alt="om"
               width={100}
-              height={200}
-              layout="intrinsic"
+              height={100}
               priority={true}
             />
           </div>
@@ -143,35 +140,37 @@ export default function Home() {
         </div>
 
         {/* Countdown Timer */}
-        <div className="flex font-cormorant contain-layout">
-          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
-            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
-              {timeLeft.days}
-            </span>
-            <span className="text-sm mt-2">Days</span>
-          </p>
-          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
-            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
-              {timeLeft.hours}
-            </span>
-            <span className="text-sm mt-2">Hours</span>
-          </p>
-          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
-            <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
-              {timeLeft.minutes}
-            </span>
-            <span className="text-sm mt-2">Minutes</span>
-          </p>
-          <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
-            <span
-              key={timeLeft.seconds}
-              className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center"
-            >
-              {timeLeft.seconds}
-            </span>
-            <span className="text-sm mt-2">Seconds</span>
-          </p>
-        </div>
+        {hasMounted && (
+          <div className="flex font-cormorant contain-layout">
+            <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
+              <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
+                {timeLeft.days}
+              </span>
+              <span className="text-sm mt-2">Days</span>
+            </p>
+            <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
+              <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
+                {timeLeft.hours}
+              </span>
+              <span className="text-sm mt-2">Hours</span>
+            </p>
+            <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
+              <span className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center">
+                {timeLeft.minutes}
+              </span>
+              <span className="text-sm mt-2">Minutes</span>
+            </p>
+            <p className="flex flex-col items-center px-4 pt-4 min-w-[100px]">
+              <span
+                key={timeLeft.seconds}
+                className="text-4xl md:text-6xl w-10 md:w-16 text-center h-16 flex items-center justify-center"
+              >
+                {timeLeft.seconds}
+              </span>
+              <span className="text-sm mt-2">Seconds</span>
+            </p>
+          </div>
+        )}
 
         <p className="font-cormorant font-bold text-xl mt-4">
           #OnCloudRambaran2025
@@ -209,23 +208,25 @@ export default function Home() {
             </div>
           </DialogContent>
 
-          <div className="opacity-90">
-            <AddToCalendarButton
-              name="Tricia & Amit's Wedding Ceremony"
-              options={["Apple", "Google", "iCal"]}
-              location="Triveni Mandir/Pearson Convention Centre"
-              startDate="2025-08-22"
-              endDate="2025-08-23"
-              startTime="14:30"
-              endTime="23:59"
-              timeZone="America/Toronto"
-              label="Add to Calendar"
-              styleLight="--font: Cormorant; --btn-background: #2F4F4F; --btn-text: #D8B480;"
-              buttonStyle="default"
-              trigger="click"
-              size="1"
-            />
-          </div>
+          {mounted && (
+            <div className="opacity-90">
+              <AddToCalendarButton
+                name="Tricia & Amit's Wedding Ceremony"
+                options={["Apple", "Google", "iCal"]}
+                location="Triveni Mandir/Pearson Convention Centre"
+                startDate="2025-08-22"
+                endDate="2025-08-23"
+                startTime="14:30"
+                endTime="23:59"
+                timeZone="America/Toronto"
+                label="Add to Calendar"
+                styleLight="--font: Cormorant; --btn-background: #2F4F4F; --btn-text: #D8B480;"
+                buttonStyle="default"
+                trigger="click"
+                size="1"
+              />
+            </div>
+          )}
         </Dialog>
 
         <Timeline />
